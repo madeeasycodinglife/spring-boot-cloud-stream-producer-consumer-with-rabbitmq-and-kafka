@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: SPRING-CLOUD-STREAM
+  cloud:
+    function:
+       definition: logEventReceived
+    stream:
+      bindings:
+        logEventReceived-in-0: #a consumer
+          destination: sensor_event_topic
+          group: ${spring.application.name}
+server:
+  port: 8081
+
+# for kafka docker run -d --name kafka -p 9092:9092 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092 -e ALLOW_PLAINTEXT_LISTENER=yes bitnami/kafka:latest

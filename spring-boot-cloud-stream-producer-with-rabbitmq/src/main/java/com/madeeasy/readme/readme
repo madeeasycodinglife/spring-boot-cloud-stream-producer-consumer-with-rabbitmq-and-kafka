@@ -1,0 +1,12 @@
+
+Note :: you can use ::
+         #1) producer => rabbitmq
+         #2) consumer => rabbitmq
+      OR #1) producer => kafka
+         #2) consumer => kafka
+      OR #1) producer => rabbitmq
+         #2) consumer => kafka
+      OR #1) producer => kafka
+         #2) consumer => rabbitmq
+ Only you have to remember that where you will put rabbitmq or kafka then respective broker(rabbitmq or kafka) should
+ be in running state . That is the beautiful part of the spring cloud stream .

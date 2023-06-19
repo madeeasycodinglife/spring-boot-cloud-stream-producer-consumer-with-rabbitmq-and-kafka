@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: SPRING-CLOUD-STREAM
+  cloud:
+    function:
+      definition: sensorEventProducer;logEventReceived
+    stream:
+      bindings:
+        sensorEventProducer-out-0: #a producer
+          destination: sensor_event_topic
+          group: ${spring.application.name}
